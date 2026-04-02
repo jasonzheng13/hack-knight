@@ -27,9 +27,7 @@ export default function Home() {
         <section id="faq">                            {/* id="faq" is the scroll target for the navbar's href="/#faq" */}
           <FAQ />                                     {/* section 6: FAQ accordion */}
         </section>
-  
-        <Footer />                                    {/* section 7: footer */}
-  
+    
       </main>
     );
   }
