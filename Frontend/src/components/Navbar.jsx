@@ -12,6 +12,14 @@ export default function Navbar() {
 
       <ul className="flex gap-25 items-center">         {/* unordered list to hold nav items */}
 
+        <li>                                           {/* list item for Sponsors */}
+          <a href="/#sponsors" className="navbar-link">Sponsors</a>         {/* href="/#sponsors" scrolls to the element with id="sponsors" on the homepage */}
+        </li>
+
+        <li>                                           {/* list item for Photo Gallery */}
+          <a href="/#photos" className="navbar-link">Past Events</a>         {/* href="/#sponsors" scrolls to the element with id="sponsors" on the homepage */}
+        </li>
+
         <li>                                           {/* list item for Schedule */}
           <a href="/#schedule" className="navbar-link">Schedule</a>         {/* href="/#schedule" scrolls to the element with id="schedule" on the homepage */}
         </li>
@@ -20,16 +28,8 @@ export default function Navbar() {
           <a href="/#team" className="navbar-link">Team</a>                    {/* href="/#team" scrolls to the element with id="team" on the homepage */}
         </li>
 
-        <li>                                           {/* list item for Sponsors */}
-          <a href="/#sponsors" className="navbar-link">Sponsors</a>         {/* href="/#sponsors" scrolls to the element with id="sponsors" on the homepage */}
-        </li>
-
         <li>                                           {/* list item for FAQ */}
           <a href="/#faq" className="navbar-link">FAQ</a>                      {/* href="/#faq" scrolls to the element with id="faq" on the homepage */}
-        </li>
-
-        <li>                                           {/* list item for Photo Gallery */}
-          <a href="/#gallery" className="navbar-link">Previous Event Highlights</a>         {/* href="/#sponsors" scrolls to the element with id="sponsors" on the homepage */}
         </li>
 
       </ul>
