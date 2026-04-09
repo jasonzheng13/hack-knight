@@ -14,11 +14,11 @@ export default function Home() {
 
       <Hero />                                      {/* section 1: title, dates, description, countdown, CTA buttons */}
 
-      <section id="sponsors" className="scroll-mt-64 bg-void border-t border-void pb-24">                       {/* id="sponsors" is the scroll target for the navbar's href="/#sponsors" */}
+      <section id="sponsors" className="scroll-mt-36 bg-void border-t border-void py-8 sm:py-24">                       {/* id="sponsors" is the scroll target for the navbar's href="/#sponsors" */}
         <SponsorsCarousel />                          {/* section 2: sponsor logos carousel*/}
       </section>
 
-      <section id="photos" className="scroll-mt-36">
+      <section id="photos" className="scroll-mt-10">
         <PhotoGallery />                              {/* section 3: photo gallery of past events */}
       </section>
 
@@ -26,11 +26,11 @@ export default function Home() {
         <SchedulePreview />                           {/* section 4: schedule preview grid */}
       </section>
 
-      <section id="team" className="scroll-mt-36">                           {/* id="team" is the scroll target for the navbar's href="/#team" */}
+      <section id="team" className="scroll-mt-10">                           {/* id="team" is the scroll target for the navbar's href="/#team" */}
         <TeamSection />                             {/* section 5: team member grid */}
       </section>
 
-      <section id="faq" className="scroll-mt-36">                            {/* id="faq" is the scroll target for the navbar's href="/#faq" */}
+      <section id="faq" className="scroll-mt-10">                            {/* id="faq" is the scroll target for the navbar's href="/#faq" */}
         <FAQ />                                     {/* section 6: FAQ accordion */}
       </section>
 
