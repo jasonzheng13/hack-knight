@@ -16,7 +16,7 @@ export interface CreateEventBody {
   location?: string;
 }
 
-interface UpdateEventBody {
+export interface UpdateEventBody {
   title?: string;
   description?: string;
   start_time?: string;
