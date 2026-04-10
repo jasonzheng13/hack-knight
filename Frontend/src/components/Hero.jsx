@@ -16,7 +16,46 @@ export default function Hero() {
   const leftColRef = useRef(null);
   const [towerHeight, setTowerHeight] = useState(undefined);
 
-  useEffect(() => {
+  const containerVariants = { // this is the container variant for the left column
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = { // this is the item variant for the left column
+    hidden: { opacity: 0, y: -50 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        type: "spring",
+        stiffness: 400,
+        damping: 15,
+        mass: 1.2
+      } 
+    }
+  };
+
+  const towerVariants = { // this is the tower variant for the left column
+    hidden: { opacity: 0, y: -100 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        type: "spring",
+        stiffness: 300,
+        damping: 20,
+        delay: 0.6
+      } 
+    }
+  };
+
+  useEffect(() => { // this effect is used to get the height of the tower
     const el = leftColRef.current;
     if (!el) return;
     const ro = new ResizeObserver(([entry]) => {
@@ -60,34 +99,42 @@ export default function Hero() {
           ref={leftColRef}
           className="hero-left-col w-full min-w-0 max-w-xl md:max-w-max"
           style={{ position: 'relative', zIndex: 4, y: contentY }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
-          <h1 className="font-display font-bold text-4xl sm:text-5xl md:text-6xl xl:text-[clamp(2.5rem,5vw,8rem)] text-text-primary mb-2 leading-none xl:whitespace-nowrap">
+          <motion.h1 variants={itemVariants} className="font-display font-bold text-4xl sm:text-5xl md:text-6xl xl:text-[clamp(2.5rem,5vw,8rem)] text-text-primary mb-2 leading-none xl:whitespace-nowrap">
             <span className="text-ultraviolet">HackKnight</span> 2026
-          </h1>
+          </motion.h1>
 
-          <p className="font-body text-text-primary text-base sm:text-lg md:text-xl xl:text-[clamp(1.25rem,2.5vw,3.5rem)] mb-4 sm:mb-6">
+          <motion.p variants={itemVariants} className="font-body text-text-primary text-base sm:text-lg md:text-xl xl:text-[clamp(1.25rem,2.5vw,3.5rem)] mb-4 sm:mb-6">
             October 9th – 11th, 2026
-          </p>
+          </motion.p>
 
-          <p className="font-body text-text-secondary text-sm sm:text-base md:text-[clamp(1rem,1.5vw,1.25rem)] max-w-xl lg:max-w-2xl mb-6 lg:mb-4 leading-relaxed">
+          <motion.p variants={itemVariants} className="font-body text-text-secondary text-sm sm:text-base md:text-[clamp(1rem,1.5vw,1.25rem)] max-w-xl lg:max-w-2xl mb-6 lg:mb-4 leading-relaxed">
             HackKnight is a 48-hour hackathon where students come together to create
             innovative projects. We are a student run organization dedicated to providing
             a great event for students to learn and grow. Join us for a weekend of coding,
             learning, and fun!
-          </p>
+          </motion.p>
 
-          <div className="hero-buttons flex gap-3 mb-6 w-full flex-wrap">
+          <motion.div variants={itemVariants} className="hero-buttons flex gap-3 mb-6 w-full flex-wrap">
             <Link to="/register" className="btn-primary text-sm px-5 py-2.5 sm:text-base sm:px-6 sm:py-3">Apply Now</Link>
             <Link to="/schedule" className="btn-outline text-sm px-5 py-2.5 sm:text-base sm:px-6 sm:py-3">View Schedule</Link>
-          </div>
+          </motion.div>
 
-          <CountdownTimer />
+          <motion.div variants={itemVariants}>
+            <CountdownTimer />
+          </motion.div>
         </motion.div>
 
         {/* z:2 — Tower, matches left column height */}
         <motion.div
           className="hero-tower-col shrink-0 w-fit items-start justify-center"
           style={{ position: 'relative', zIndex: 2, y: contentY }}
+          variants={towerVariants}
+          initial="hidden"
+          animate="visible"
         >
           <div className="relative">
             <img

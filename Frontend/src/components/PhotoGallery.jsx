@@ -51,7 +51,9 @@ export default function PhotoGallery() {
     <section id="photos" className="section-wrapper py-24">
       <h2 className="section-title text-center">Past Event Highlights</h2>
 
-      <div className="relative mt-10">
+      {/* Surface card — matches carousel / other sections */}
+      <div className="bg-surface rounded-3xl py-6 sm:py-12 px-4 sm:px-10 mt-6 sm:mt-10">
+      <div className="relative">
 
         {/* Left Arrow (offset by 22px to account for the year header so it centers strictly on the photos) */}
         <button
@@ -105,6 +107,7 @@ export default function PhotoGallery() {
         </AnimatePresence>
 
       </div>
+      </div>{/* end surface card */}
 
     </section>
   );
