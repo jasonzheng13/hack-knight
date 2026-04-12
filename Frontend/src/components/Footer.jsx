@@ -19,10 +19,11 @@ export default function Footer() {
         {/* Navigation column */}
         <div className="flex flex-col">
           <h4 className="font-display text-text-primary mb-4">HackKnight</h4>                         {/* column heading */}
-          <a href="/#faq" className="navbar-link mb-2 text-sm">FAQ</a>                     {/* anchor link — scrolls to #faq section on homepage */}
-          <Link to="/schedule" className="navbar-link mb-2 text-sm">Schedule</Link>        {/* navigates to the /schedule page */}
-          <a href="/#team" className="navbar-link mb-2 text-sm">Team</a>                   {/* anchor link — scrolls to #team section on homepage */}
-          <Link to="/sponsors" className="navbar-link mb-2 text-sm">Sponsors</Link>        {/* navigates to the /sponsors page */}
+          <a href="/#faq"      className="navbar-link mb-2 text-sm">FAQ</a>
+          <a href="/#photos"   className="navbar-link mb-2 text-sm">Past Events</a>
+          <a href="/#schedule" className="navbar-link mb-2 text-sm">Schedule</a>
+          <a href="/#team"     className="navbar-link mb-2 text-sm">Team</a>
+          <Link to="/sponsors" className="navbar-link mb-2 text-sm">Sponsors</Link>
         </div>
 
         {/* Social links column */}

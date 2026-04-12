@@ -74,6 +74,7 @@ function ParallaxPhoto({ photo, index, year, onPhotoClick, isActive }) {
           willChange: "transform",
         }}
         className={`rounded-card overflow-hidden bg-surface cursor-zoom-in transition-all duration-300 hover:shadow-glow hover:border-ultraviolet/40 ${isActive ? "border-transparent border" : "border border-border"}`}
+        data-cursor="pointer"
       >
         <motion.img
           layoutId={`gallery-${year}-${index}`}

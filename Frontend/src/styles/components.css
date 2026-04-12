@@ -168,7 +168,36 @@
 
   .navbar-link {
     @apply font-mono text-text-secondary hover:text-text-primary
-           transition-colors duration-200 ease-brand;
+           transition-all duration-300 ease-brand
+           relative pb-0.5;
+  }
+
+  /* Animated underline — hidden by default */
+  .navbar-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 999px;
+    background: theme('colors.ultraviolet');
+    box-shadow: 0 0 8px theme('colors.ultraviolet');
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity   0.3s ease;
+    opacity: 0;
+  }
+
+  /* Active tab: white text + glowing purple underline */
+  .navbar-link-active {
+    @apply text-text-primary;
+  }
+
+  .navbar-link-active::after {
+    transform: scaleX(1);
+    opacity: 1;
   }
 
   /* Desktop nav elements: visible on md+, hidden on mobile */
